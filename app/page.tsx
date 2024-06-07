@@ -1,11 +1,13 @@
 import AcmeLogo from '@/app/ui/acme-logo';
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
+import { UrlObject } from 'url';
 import {lusitana} from '@/app/ui/fonts';
 import Image from 'next/image';
 import styles from '@/app/ui/home.module.css';
 
 export default function Page() {
+  const linkHref: UrlObject = { pathname: '/login' };
   return (
     <main className="flex min-h-screen flex-col p-6">
       <div className="flex h-20 shrink-0 items-end rounded-lg bg-blue-500 p-4 md:h-52">
@@ -27,7 +29,7 @@ export default function Page() {
             , brought to you by Vercel.
           </p>
           <Link
-            href="/login"
+            href = {linkHref}
             className="flex items-center gap-5 self-start rounded-lg bg-blue-500 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-400 md:text-base"
           >
             <span>Log in</span> <ArrowRightIcon className="w-5 md:w-6" />
