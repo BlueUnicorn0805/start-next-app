@@ -10,14 +10,14 @@ export default function Search({ placeholder }: { placeholder: string }) {
 
   function handleSearch(term: string) {
     console.log(`Searching... ${term}`);
-    
+
     const params = new URLSearchParams(searchParams);
     if (term) {
       params.set('query', term);
     } else {
       params.delete('query');
     }
-    replace(`${pathname}?${params.toString()}`);
+    replace(`${pathname}?${params.toString()}` as RouteImpl<`${string}?${string}`>);
   }
   return (
     <div className="relative flex flex-1 flex-shrink-0">
